@@ -16,27 +16,19 @@ or
 
 ```html
 <template>
-  <div class="hello">
-    <div class="">
-      <HorizonChart :chartData="data" />
-    </div>
+  <div class="horizon">
+    <HorizonChart :chartData="data" />
   </div>
 </template>
 ```
-A chartData value is required and should contain an array of index/value pairs.
-
-```js
-[[0, 1.3], [1, 1.1], [2, -0.3]... ]
-```
+A chartData value is required and should contain an array of values.
 
 There are also a couple of options:
 
 ```html
 <template>
-  <div class="hello">
-    <div class="">
-      <HorizonChart startColor="blue" endColor="yellow" :height="80" :width="800" :chartData="data" />
-    </div>
+  <div class="horizon">
+    <HorizonChart startColor="blue" endColor="yellow" :height="80" :width="800" :chartData="data" />
   </div>
 </template>
 ```
@@ -44,5 +36,5 @@ There are also a couple of options:
 ### startColor and endColor
 You can use standard color names or RGB hexes such as `#ff0044` etc. The defaults are '#ff7e71' and '#00bd62',
 
-### height and width
-The defaults are 400 by 100. If you want to override the defaults then you need to use `v-bind:` or the shorthand ':'
+### width and height
+The defaults are 400 by 100. If you want to override the defaults then you need to use `v-bind:` or the shorthand `:`

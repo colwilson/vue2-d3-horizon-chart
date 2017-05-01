@@ -10,7 +10,6 @@ import d3 from './d3_plugins.js'
 export default BaseChart.extend({
   name: 'horizon-chart',
   props: {
-    // bands: { type: Number, default: 4 },
     startColor: { type: String, default: '#ff7e71'},
     endColor: { type: String, default: '#00bd62' }
   },
@@ -22,8 +21,6 @@ export default BaseChart.extend({
   },
   methods: {
     renderChart () {
-      let data = this.chartData
-
       let chart = d3.horizon()
         .width(this.width)
         .height(this.height)
@@ -32,6 +29,10 @@ export default BaseChart.extend({
         .curve(d3.curveMonotoneX)
         .colors(this.colors)
 
+      let data = []
+      for (var i in this.chartData) {
+        data.push([i, this.chartData[i]])
+      }
       var svg = d3.select(this.$el)
         .attr('width', this.width)
         .attr('height', this.height)
