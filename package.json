@@ -9,7 +9,8 @@
     "vue": ">= 2.0.0"
   },
   "scripts": {
-    "build": "webpack --progress --hide-modules --config  webpack.build.js"
+    "build": "webpack --progress --hide-modules --config  webpack.build.js",
+    "dev": "webpack --progress --colors --watch --hide-modules --config  webpack.build.js"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",

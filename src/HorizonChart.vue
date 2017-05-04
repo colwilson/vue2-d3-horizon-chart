@@ -1,17 +1,35 @@
 <template>
-    <svg class='horizon-chart'></svg>
+  <svg class='horizon-chart'></svg>
 </template>
 
 <script>
-import BaseChart from './BaseChart.vue'
+// import BaseChart from './BaseChart.vue'
 // import { BaseChart } from 'vue2-d3-charts'
+import Vue from 'vue'
 import d3 from './d3_plugins.js'
 
-export default BaseChart.extend({
+export default Vue.extend({
   name: 'horizon-chart',
   props: {
-    startColor: { type: String, default: '#ff7e71'},
-    endColor: { type: String, default: '#00bd62' }
+    data: { type: Array, required: true },
+    startColor: { type: String, default: '#ff7e71' },
+    endColor: { type: String, default: '#00bd62' },
+    width: { type: Number, default: 800 },
+    height: { type: Number, default: 80 }
+  },
+  mounted () {
+    this.renderChart()
+  },
+  data () {
+    return {
+      reactiveData: this.data
+    }
+  },
+  watch: {
+    reactiveData: {
+      handler: 'renderChart',
+      deep: true
+    }
   },
   computed: {
     colors () {
@@ -30,8 +48,8 @@ export default BaseChart.extend({
         .colors(this.colors)
 
       let data = []
-      for (var i in this.chartData) {
-        data.push([i, this.chartData[i]])
+      for (var i in this.reactiveData) {
+        data.push([i, this.reactiveData[i]])
       }
       var svg = d3.select(this.$el)
         .attr('width', this.width)
