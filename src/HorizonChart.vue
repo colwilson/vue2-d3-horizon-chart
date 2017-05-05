@@ -5,10 +5,9 @@
 <script>
 // import BaseChart from './BaseChart.vue'
 // import { BaseChart } from 'vue2-d3-charts'
-import Vue from 'vue'
 import d3 from './d3_plugins.js'
 
-export default Vue.extend({
+export default {
   name: 'horizon-chart',
   props: {
     data: { type: Array, required: true },
@@ -20,13 +19,8 @@ export default Vue.extend({
   mounted () {
     this.renderChart()
   },
-  data () {
-    return {
-      reactiveData: this.data
-    }
-  },
   watch: {
-    reactiveData: {
+    data: {
       handler: 'renderChart',
       deep: true
     }
@@ -39,6 +33,7 @@ export default Vue.extend({
   },
   methods: {
     renderChart () {
+      console.log('rendering');
       let chart = d3.horizon()
         .width(this.width)
         .height(this.height)
@@ -48,8 +43,8 @@ export default Vue.extend({
         .colors(this.colors)
 
       let data = []
-      for (var i in this.reactiveData) {
-        data.push([i, this.reactiveData[i]])
+      for (var i in this.data) {
+        data.push([i, this.data[i]])
       }
       var svg = d3.select(this.$el)
         .attr('width', this.width)
@@ -58,7 +53,7 @@ export default Vue.extend({
       svg.data([data]).call(chart)
     }
   }
-})
+}
 </script>
 
 <style>

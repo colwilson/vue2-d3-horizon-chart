@@ -37,4 +37,4 @@ There are also a couple of options:
 You can use standard color names or RGB hexes such as `#ff0044` etc. The defaults are '#ff7e71' and '#00bd62',
 
 ### width and height
-The defaults are 400 by 100. If you want to override the defaults then you need to use `v-bind:` or the shorthand `:`
+The defaults are 800 by 80. If you want to override the defaults then you need to use `v-bind:` or the shorthand `:`
