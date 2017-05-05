@@ -33,7 +33,6 @@ export default {
   },
   methods: {
     renderChart () {
-      console.log('rendering');
       let chart = d3.horizon()
         .width(this.width)
         .height(this.height)
