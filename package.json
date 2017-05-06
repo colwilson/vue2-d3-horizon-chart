@@ -1,6 +1,6 @@
 {
   "name": "vue2-d3-horizon-chart",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A horizon chart for Vue2, built using D3 v4",
   "main": "dist/vue2-d3-horizon-chart.js",
   "license": "MIT",
@@ -26,6 +26,6 @@
   },
   "repository": {
     "type" : "git",
-    "url" : "https://github.com/colwilson/vue2-d3-horizon-chart"
+    "url" : "git+ssh://github.com/colwilson/vue2-d3-horizon-chart.git"
   }
 }
