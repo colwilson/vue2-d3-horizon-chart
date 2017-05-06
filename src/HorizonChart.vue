@@ -14,7 +14,7 @@ export default {
     startColor: { type: String, default: '#ff7e71' },
     endColor: { type: String, default: '#00bd62' },
     width: { type: Number, default: 800 },
-    height: { type: Number, default: 80 }
+    height: { type: Number, default: 40 }
   },
   mounted () {
     this.renderChart()
