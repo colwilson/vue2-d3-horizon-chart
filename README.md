@@ -4,6 +4,8 @@ A horizon chart for Vue2, built using D3 v4.
 
 This works, but I'm no expert in either Vue2 or on D3, so if you can contribute, please do. Have a look at the issues.
 
+There's a [blog post](https://www.wwwdotcomslash.com/posts/Horizon-Charts-in-Vue2/) and a [demo app and code](https://github.com/colwilson/vue2-d3-horizon-chart-demo) to show it working with live streaming data.
+
 ## Installation
 
 `npm install vue2-d3-horizon-chart`
